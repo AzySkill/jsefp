@@ -468,3 +468,18 @@ console.log(user.contact.email);
 | 4 c | ✅ La ligne `console.log` est écrite | — | ✅ |
 | 4 c | ❌ Réponse toujours « undefined » | La console affiche en rouge `Uncaught TypeError: Cannot read properties of undefined (reading 'email')`. Il faut lire l'erreur et la noter (type, message, ligne) | ⬜ |
 | 4 c | ⬜ Ligne pas mise en commentaire | L'erreur arrête tout le code qui suit : le 4 d) et les exercices suivants ne s'exécutent plus | ⬜ |
+
+### Tentative 3 — exercice 4 c (10/11/2026, 12 h 21)
+
+```js
+console.log(user.contact.email);
+// Ce qui se passe : TypeError: Cannot read property 'email' of undefined
+```
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 4 c | ✅ Type juste : `TypeError` | — | ✅ |
+| 4 c | ⚠️ Message pas recopié exactement | Chrome écrit `Cannot read properties of undefined (reading 'email')`. Mon message est une ancienne formulation (pas celle de ma console). L'idée est la même | ⬜ |
+| 4 c | ⬜ Ligne pas notée | — | ⬜ |
+| 4 c | ⬜ Pas d'explication du « pourquoi » | — | ⬜ |
+| 4 c | ⬜ Ligne toujours pas en commentaire | L'erreur bloque toujours le 4 d) et la suite | ⬜ |
