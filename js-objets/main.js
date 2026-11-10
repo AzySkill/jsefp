@@ -63,17 +63,26 @@ console.log(getUserInfo(alice));
 // ----- 4. Objets imbriqués -----
 // a) Crée un objet user avec un nom et une propriété address
 //    contenant street, city et zip.
+const user = {
+  name: 'Alice',
+  address: {
+    street: 'Rue de la Loi 16',
+    city: 'Bruxelles',
+    zip: '1000',
+  },
+};
 
 
 // b) Affiche la ville.
+console.log(user.address.city);
 
 
 // c) Affiche user.contact.email : que se passe-t-il ?
-// Ce qui se passe :
+// Ce qui se passe : undefined
 
 
 // d) Corrige pour afficher 'Pas d'email' quand le contact est absent (voir Opérateurs).
-
+console.log(user.contact?.email || 'Pas d\'email');
 
 
 // ----- 5. Parcourir un objet -----

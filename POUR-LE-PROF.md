@@ -420,3 +420,38 @@ console.log(getUserInfo(alice));
 |---|---|
 | 3 a | ✅ Du premier coup (écriture raccourcie) |
 | 3 b | ✅ Code juste du premier coup. Mais je pensais que les backticks et les guillemets simples « reviennent au même » : l'IA m'a montré que `${ }` ne fonctionne qu'entre backticks |
+
+### Tentative 1 — exercice 4 (10/11/2026, 12 h 10)
+
+Avant l'exercice, l'IA m'a expliqué les objets imbriqués avec un exemple `phone.screen.size`. Je n'ai pas répondu à la question d'entraînement, je suis passé à l'exercice.
+
+Mon code, tel quel :
+
+```js
+const user = {
+  name: 'Alice',
+  address: {
+    street: 'Rue de la Loi 16',
+    city: 'Bruxelles',
+    zip: '1000',
+  },
+};
+
+// b) Affiche la ville.
+console.log(user.address.city);
+
+// c) Affiche user.contact.email : que se passe-t-il ?
+// Ce qui se passe : undefined
+
+// d) Corrige pour afficher 'Pas d'email' quand le contact est absent (voir Opérateurs).
+console.log(user.contact?.email || 'Pas d\'email');
+```
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 4 a | ✅ Juste | `address` est bien un objet rangé dans `user`, avec street, city et zip | — |
+| 4 b | ✅ Juste | `user.address.city` affiche `Bruxelles` | — |
+| 4 c | ❌ Pas de `console.log` écrit | La consigne demande d'afficher `user.contact.email` : je n'ai pas écrit la ligne, donc je n'ai pas pu voir ce qui se passe vraiment | ⬜ |
+| 4 c | ❌ Réponse « undefined » fausse | `user.contact` vaut `undefined` (la propriété n'existe pas, comme au 1 d). Mais ensuite on demande `.email` **dans** `undefined` : ce n'est pas un objet, donc JavaScript s'arrête avec une **erreur** dans la console | ⬜ |
+| 4 d | ✅ Code juste | `?.` et `||` affichent bien `Pas d'email` | — |
+| 4 d | ❓ À vérifier | `?.`, `||` et `\'` n'ont pas été revus aujourd'hui : l'IA me demande d'expliquer avec mes mots ce que fait chacun | ⬜ |
