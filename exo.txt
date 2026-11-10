@@ -1,0 +1,32 @@
+Exercices sur les variables
+Travaillez dans le main.js du setup, ouvrez la page avec Live Server et gardez la console ouverte (F12).
+
+1. Déclaration de variables
+Déclarez une variable name qui contiendra votre prénom
+Déclarez une variable age qui contiendra votre âge
+Déclarez une constante PI qui contiendra la valeur 3.14159
+Déclarez une variable isAdult qui contiendra un booléen indiquant si vous êtes majeur
+Affichez chaque variable dans la console
+2. let ou const ?
+Déclarez let score = 0, puis donnez-lui la valeur 10. Affichez score.
+Déclarez const country = 'Belgique', puis donnez-lui la valeur 'France'.
+Lisez l'erreur dans la console:
+Quel est le type d'erreur ?
+Que dit le message ?
+À quelle ligne ? Cliquez sur le lien pour aller au code.
+Mettez la ligne fautive en commentaire.
+Reprenez les variables de l'exercice 1: lesquelles devraient être des let, lesquelles des const ? Pourquoi ?
+3. Avant la déclaration
+Écrivez console.log(city); avant const city = 'Bruxelles';. Lisez l'erreur.
+Remplacez const par var. Que s'affiche-t-il maintenant ?
+Remettez const: pourquoi est-ce préférable ?
+4. Les types
+Créez un objet user avec les propriétés suivantes:
+name (string)
+age (number)
+isActive (boolean)
+hobbies (tableau de strings)
+nickname (valant null)
+Avant d'exécuter, notez pour chaque propriété ce que typeof va afficher.
+Affichez le typeof de chaque propriété et comparez avec vos prédictions.
+Deux résultats vous ont surpris ? Comment vérifier que hobbies est bien un tableau ?
