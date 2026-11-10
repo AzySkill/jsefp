@@ -399,3 +399,24 @@ console.log(getUserInfo(alice));
 | Pourquoi des backticks `` ` `` et pas des `' '` ? | « ça change quoi ça reviens au meme » | ❌ Ce n'est pas pareil : avec des guillemets simples, `${ }` n'est pas remplacé, la console affiche le texte `${user.name}` tel quel. Seuls les backticks remplacent `${ }` par la valeur. L'IA m'a demandé de le tester moi-même dans la console |
 
 **Suite (10/11/2026, 12 h) :** j'ai dit avoir déplacé les lignes de test, mais le fichier enregistré n'a pas changé (elles sont toujours sous 4 a) : sûrement pas enregistré. Pour le test backticks / guillemets, j'ai répondu « jsp ce que ça change » : l'IA m'a montré ce que la console affiche dans les deux cas (`Bonjour Alice` avec les backticks, `Bonjour ${alice.name}` avec les guillemets simples).
+
+### Tentative 2 — exercice 3 (10/11/2026, 12 h 05)
+
+```js
+function getUserInfo(user) {
+  return `${user.name}, ${user.age} ans, ${user.email}`;
+}
+const alice = createUser('Alice', 30, 'Alice@gmail.com');
+console.log(getUserInfo(alice));
+```
+
+| Exercice | Résultat | Corrigé par moi ? |
+|---|---|---|
+| 3 (test) | ✅ Les lignes de test sont maintenant dans l'exercice 3, sous `getUserInfo` | ✅ |
+
+### Bilan de l'exercice 3
+
+| Exercice | Résultat final |
+|---|---|
+| 3 a | ✅ Du premier coup (écriture raccourcie) |
+| 3 b | ✅ Code juste du premier coup. Mais je pensais que les backticks et les guillemets simples « reviennent au même » : l'IA m'a montré que `${ }` ne fonctionne qu'entre backticks |

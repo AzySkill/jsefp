@@ -57,13 +57,13 @@ function createUser(name, age, email) {
 function getUserInfo(user) {
   return `${user.name}, ${user.age} ans, ${user.email}`;
 }
-
+const alice = createUser('Alice', 30, 'Alice@gmail.com');
+console.log(getUserInfo(alice));
 
 // ----- 4. Objets imbriqués -----
 // a) Crée un objet user avec un nom et une propriété address
 //    contenant street, city et zip.
-const alice = createUser('Alice', 30, 'Alice@gmail.com');
-console.log(getUserInfo(alice));
+
 
 // b) Affiche la ville.
 
