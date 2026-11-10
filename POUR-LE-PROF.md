@@ -497,3 +497,14 @@ console.log(user.contact.email);
 | 4 c | ⬜ Ligne pas notée | — | ⬜ |
 | 4 c | ⬜ Pas d'explication du « pourquoi » | — | ⬜ |
 | 4 c | ⬜ Ligne toujours pas en commentaire | L'erreur bloque toujours le 4 d) et la suite | ⬜ |
+
+**Suite (12 h 25) :** j'ai lancé le fichier avec Node (dans le terminal) et j'ai collé l'erreur complète dans le chat :
+
+```
+TypeError: Cannot read properties of undefined (reading 'email')
+    at Object.<anonymous> (D:\laragon\www\js efp\js-objets\main.js:81:26)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14)
+    ...
+```
+
+L'IA m'a expliqué comment lire ce bloc : la 1re ligne = type + message ; la 2e ligne = mon fichier, `81` = numéro de ligne, `26` = position (colonne) dans la ligne ; les lignes `node:internal/...` sont le fonctionnement interne de Node et ne me concernent pas. Il me reste à écrire la ligne et le pourquoi dans mon fichier, et à mettre la ligne en commentaire.
