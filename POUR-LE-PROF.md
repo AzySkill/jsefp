@@ -455,3 +455,16 @@ console.log(user.contact?.email || 'Pas d\'email');
 | 4 c | ❌ Réponse « undefined » fausse | `user.contact` vaut `undefined` (la propriété n'existe pas, comme au 1 d). Mais ensuite on demande `.email` **dans** `undefined` : ce n'est pas un objet, donc JavaScript s'arrête avec une **erreur** dans la console | ⬜ |
 | 4 d | ✅ Code juste | `?.` et `||` affichent bien `Pas d'email` | — |
 | 4 d | ❓ À vérifier | `?.`, `||` et `\'` n'ont pas été revus aujourd'hui : l'IA me demande d'expliquer avec mes mots ce que fait chacun | ⬜ |
+
+### Tentative 2 — exercice 4 c (10/11/2026, 12 h 20)
+
+```js
+console.log(user.contact.email);
+// Ce qui se passe : undefined
+```
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 4 c | ✅ La ligne `console.log` est écrite | — | ✅ |
+| 4 c | ❌ Réponse toujours « undefined » | La console affiche en rouge `Uncaught TypeError: Cannot read properties of undefined (reading 'email')`. Il faut lire l'erreur et la noter (type, message, ligne) | ⬜ |
+| 4 c | ⬜ Ligne pas mise en commentaire | L'erreur arrête tout le code qui suit : le 4 d) et les exercices suivants ne s'exécutent plus | ⬜ |

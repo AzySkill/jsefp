@@ -78,6 +78,7 @@ console.log(user.address.city);
 
 
 // c) Affiche user.contact.email : que se passe-t-il ?
+console.log(user.contact.email);
 // Ce qui se passe : undefined
 
 
