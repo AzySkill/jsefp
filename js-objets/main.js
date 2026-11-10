@@ -79,7 +79,7 @@ console.log(user.address.city);
 
 // c) Affiche user.contact.email : que se passe-t-il ?
 console.log(user.contact.email);
-// Ce qui se passe : TypeError: Cannot read property 'email' of undefined
+// Ce qui se passe : TypeError: Cannot read properties of undefined
 
 
 // d) Corrige pour afficher 'Pas d'email' quand le contact est absent (voir Opérateurs).

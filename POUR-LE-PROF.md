@@ -483,3 +483,17 @@ console.log(user.contact.email);
 | 4 c | ⬜ Ligne pas notée | — | ⬜ |
 | 4 c | ⬜ Pas d'explication du « pourquoi » | — | ⬜ |
 | 4 c | ⬜ Ligne toujours pas en commentaire | L'erreur bloque toujours le 4 d) et la suite | ⬜ |
+
+### Tentative 4 — exercice 4 c (10/11/2026, 12 h 22)
+
+```js
+console.log(user.contact.email);
+// Ce qui se passe : TypeError: Cannot read properties of undefined
+```
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 4 c | ✅ Message corrigé (formulation de Chrome) | Il manque juste la fin `(reading 'email')`, mais c'est accepté | ✅ |
+| 4 c | ⬜ Ligne pas notée | — | ⬜ |
+| 4 c | ⬜ Pas d'explication du « pourquoi » | — | ⬜ |
+| 4 c | ⬜ Ligne toujours pas en commentaire | L'erreur bloque toujours le 4 d) et la suite | ⬜ |
