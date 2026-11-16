@@ -138,10 +138,6 @@ console.log(moved.address);
 
 // d) Crée une copie profonde de user, modifie la ville de la copie,
 //    et vérifie que l'original n'a pas changé.
-const deepCopy = structuredClone(user);
-deepCopy.address.city = 'Namur';
-console.log(deepCopy.address.city); // Namur
-console.log(user.address.city);     // inchangé
 
 
 

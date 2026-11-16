@@ -115,10 +115,12 @@ console.log('Somme des positifs :', positiveSum);
 
 // Avec le tableau [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] :
 // a) Avec forEach, affiche chaque nombre sous la forme 'indice 0: 1'.
+run('6. forEach, map, filter', () => {
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
 
-
- 
-
+  numbers.forEach((index, value) => {
+    console.log(`indice ${index}: ${value}`);
+  });
 // b) Avec map, crée un tableau contenant le carré de chaque nombre.
 
 
@@ -132,7 +134,7 @@ console.log('Somme des positifs :', positiveSum);
 
 // d) En enchaînant filter et map, crée un tableau contenant le carré des nombres pairs.
 // 6.4
-     // inchangé
+     
 
 
 // e) Affiche le tableau de départ : a-t-il été modifié ?
@@ -268,4 +270,3 @@ console.log('--- 13. Bonus : reduce, some, every ---');
 
 
 // c) Avec some, vérifie si le panier de l'exercice 11 contient un article à plus de 50 €.
-

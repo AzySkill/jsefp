@@ -625,3 +625,33 @@ L'IA a exécuté le fichier : **rien de l'exercice 5 ni de l'exercice 6 ne s'aff
 ### Remarque — fichier des tableaux, exercice 6
 
 Dans `js-Tableaux/main.js`, sous les consignes de l'exercice 6 (tableaux), il y a des morceaux de commentaires qui viennent de l'exercice 6 **des objets** (« l'original n'a pas changé », « La rue a disparu… », « 6.4 », « inchangé »). La ligne `console.log('--- 6. forEach, map, filter ---');` a aussi été supprimée. Il n'y a pas encore de code pour l'exercice 6 des tableaux.
+
+---
+
+# Retour aux exercices sur les tableaux
+
+### Tentative 1 — tableaux, exercice 6 a (16/11/2026, 12 h 41)
+
+J'ai dit à l'IA : « il y a une erreur je crois ». Mon code, tel quel :
+
+```js
+// a) Avec forEach, affiche chaque nombre sous la forme 'indice 0: 1'.
+run('6. forEach, map, filter', () => {
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  numbers.forEach((index, value) => {
+    console.log(`indice ${index}: ${value}`);
+  });
+```
+
+L'IA a exécuté le fichier : `SyntaxError: Unexpected end of input` à la ligne 273 (la toute dernière). **Plus rien ne s'affiche dans tout le fichier**, même les exercices 1 à 5.
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 6 a | ❌ Bloc jamais fermé | `run(..., () => {` ouvre une parenthèse et une accolade qui ne sont jamais refermées. JavaScript arrive à la fin du fichier en attendant toujours la fermeture : c'est le « Unexpected end of input » (fin du fichier inattendue). Une erreur de syntaxe bloque **tout** le fichier, pas seulement l'exercice | ⬜ |
+| 6 a | ❌ `run` n'existe pas | Aucune fonction `run` n'est créée dans le fichier ni demandée par l'énoncé. Une fois la syntaxe réparée, ce serait une `ReferenceError: run is not defined` | ⬜ |
+| 6 a | ❌ Paramètres inversés | `forEach` donne d'abord **l'élément**, puis **l'indice**. Avec `(index, value)`, la variable nommée `index` reçoit en fait le nombre, et `value` l'indice : la console afficherait `indice 1: 0` au lieu de `indice 0: 1` | ⬜ |
+| 6 a | ⚠️ Piège à venir | `numbers` existe déjà (exercice 1, `const numbers = []`). Si j'enlève le `run(...)`, redéclarer `const numbers` provoquera `SyntaxError: Identifier 'numbers' has already been declared`. Il faudra un autre nom | ⬜ |
+| 6 a | ❓ À vérifier | Les fonctions fléchées `() => { }` et `forEach` n'ont pas été vues avec l'IA : elle me demande d'expliquer avec mes mots | ⬜ |
+
+Remarque : dans `js-objets/main.js`, mon code de l'exercice 6 d (`structuredClone`) a été supprimé.
