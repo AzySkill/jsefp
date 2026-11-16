@@ -21,6 +21,7 @@ Il ne m'a **pas** donné les solutions. Le code et les réponses de l'exercice s
 | `js-01/` | Exercices du chapitre JS-01 (console.log) |
 | `js-02-variables/` | Exercice sur les variables : la page `index.html` et mon code dans `main.js` |
 | `js-objets/` | Exercices sur les objets : la page `index.html` et mon code dans `main.js` |
+| `js-Tableaux/` | Exercices sur les tableaux : la page `index.html` et mon code dans `main.js` |
 | `POUR-LE-PROF.md` | Cette note |
 
 ## Ordre de travail
@@ -508,3 +509,35 @@ TypeError: Cannot read properties of undefined (reading 'email')
 ```
 
 L'IA m'a expliqué comment lire ce bloc : la 1re ligne = type + message ; la 2e ligne = mon fichier, `81` = numéro de ligne, `26` = position (colonne) dans la ligne ; les lignes `node:internal/...` sont le fonctionnement interne de Node et ne me concernent pas. Il me reste à écrire la ligne et le pourquoi dans mon fichier, et à mettre la ligne en commentaire.
+
+---
+
+# Exercices sur les tableaux
+
+## Corrections de l'exercice sur les tableaux
+
+### Tentative 1 — exercice 5 « Ignorer avec continue » (16/11/2026)
+
+Mon code, tel quel :
+
+```js
+const values = [3, -1, 7, -4, 0, 5];
+let positiveSum = 0;
+
+for (const value of values) {
+  if (value < 0) {
+    continue;
+  }
+  console.log(value);
+  positiveSum += value;
+}
+console.log('Somme des positifs :', positiveSum);
+```
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 5 | ✅ Code juste | Les nombres négatifs sont sautés avec `continue`. La console affiche 3, 7, 0, 5 puis `Somme des positifs : 15` | — |
+| 5 | ⚠️ Le cas du `0` | `0` n'est ni positif ni négatif. Avec `value < 0`, il est affiché comme s'il était positif. Ça ne change pas la somme, mais il faut se demander si l'énoncé veut l'afficher | ⬜ |
+| 5 | ❓ À vérifier | L'IA me demande d'expliquer avec mes mots ce que fait `continue`, et la différence avec `break` (exercice 4) | ⬜ |
+
+Remarque : l'IA a vu que les exercices 3 et 4 de ce fichier contiennent chacun une erreur. Elle ne les a pas corrigés : ils seront vérifiés quand je le demanderai.

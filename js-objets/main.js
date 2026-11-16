@@ -88,6 +88,9 @@ console.log(user.contact?.email || 'Pas d\'email');
 
 // ----- 5. Parcourir un objet -----
 // Avec for...in, affiche chaque propriété de book sous la forme 'title: Le Petit Prince'.
+for (const prop in book) {
+  console.log(`${prop}: ${book[prop]}`);
+}
 
 
 
