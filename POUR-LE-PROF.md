@@ -547,3 +547,4 @@ Remarque : l'IA a vu que les exercices 3 et 4 de ce fichier contiennent chacun u
 | Question | Ma réponse | Résultat |
 |---|---|---|
 | Comment faire pour que `continue` saute aussi le `0` ? | « value < 0 donc let positiveSum=1 » | ❌ `positiveSum` n'est pas le problème : c'est la boîte qui accumule la somme, elle doit commencer à 0. Avec 1, la somme deviendrait 16, et le `0` serait toujours affiché. Ce qui décide si un nombre est sauté, c'est la **condition** du `if` |
+| Et avec `if (value < 1)` ? | « donc le if (value <1 ) ? » | ⚠️ Ça marche pour ce tableau (le `0` est sauté, somme 15), mais seulement parce qu'il ne contient que des nombres entiers. Avec un nombre à virgule comme `0.5` (strictement positif), il serait sauté à tort. L'IA me demande de trouver la condition qui dit exactement « plus petit ou égal à 0 » |
