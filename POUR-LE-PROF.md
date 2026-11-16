@@ -536,8 +536,10 @@ console.log('Somme des positifs :', positiveSum);
 
 | Exercice | Résultat | Explication | Corrigé par moi ? |
 |---|---|---|---|
-| 5 | ✅ Code juste | Les nombres négatifs sont sautés avec `continue`. La console affiche 3, 7, 0, 5 puis `Somme des positifs : 15` | — |
-| 5 | ⚠️ Le cas du `0` | `0` n'est ni positif ni négatif. Avec `value < 0`, il est affiché comme s'il était positif. Ça ne change pas la somme, mais il faut se demander si l'énoncé veut l'afficher | ⬜ |
+| 5 | ✅ `continue` bien utilisé, somme juste (15) | Les nombres négatifs sont sautés avec `continue`. La console affiche 3, 7, 0, 5 puis `Somme des positifs : 15` | — |
+| 5 | ❌ Le `0` est affiché | L'énoncé (reçu après la 1re correction) demande les nombres **strictement** positifs. `0` n'est pas strictement positif, mais la condition `value < 0` le laisse passer, donc il est affiché | ⬜ |
 | 5 | ❓ À vérifier | L'IA me demande d'expliquer avec mes mots ce que fait `continue`, et la différence avec `break` (exercice 4) | ⬜ |
 
 Remarque : l'IA a vu que les exercices 3 et 4 de ce fichier contiennent chacun une erreur. Elle ne les a pas corrigés : ils seront vérifiés quand je le demanderai.
+
+**Énoncé (16/11/2026) :** le fichier `js-Tableaux/main.js` ne contenait que mon code des exercices 1 à 5, sans consignes. J'ai collé l'énoncé complet dans le chat. L'IA l'a enregistré tel quel dans `js-Tableaux/enonce.txt` et a ajouté les consignes des exercices 6 à 13 en commentaires à la fin de `main.js` (sans solutions). Avec l'énoncé, le cas du `0` dans l'exercice 5 devient une vraie erreur (« strictement positifs »).

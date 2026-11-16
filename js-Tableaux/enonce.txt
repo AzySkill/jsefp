@@ -1,0 +1,103 @@
+Exercices sur les tableaux
+Travaillez dans le main.js du setup, ouvrez la page avec Live Server et gardez la console ouverte (F12).
+
+1. Créer et lire
+Créez un tableau vide numbers, puis remplissez-le avec les nombres de 1 à 10 à l'aide d'une boucle for
+Affichez le tableau et sa longueur
+Affichez le premier élément, puis le dernier en utilisant length
+Affichez numbers[10]: que vaut un indice qui n'existe pas ?
+Remplacez le premier élément par 0 et affichez le tableau. numbers est déclaré avec const: pourquoi peut-on quand même le modifier ?
+
+2. Ajouter, retirer, parcourir
+Créez un tableau fruits contenant 'pomme', 'banane' et 'orange'
+Ajoutez 'kiwi' à la fin et 'fraise' au début
+Retirez le dernier élément, puis le premier, en affichant à chaque fois l'élément retiré
+Avec for...of, affichez chaque fruit
+Avec une boucle for et l'indice, affichez chaque fruit sous la forme '1. pomme', '2. banane'...
+
+3. Moyenne
+Avec le tableau de notes [12, 15, 8, 17, 10]:
+Calculez la moyenne avec for...of et un accumulateur, puis affichez-la (vous devez obtenir 12.4)
+Calculez-la une seconde fois avec une boucle for et l'indice
+
+4. Chercher avec break
+Avec for...of, cherchez 'banane' dans fruits. Arrêtez la boucle dès qu'il est trouvé, puis affichez 'trouvé' ou 'introuvable'
+Testez avec 'mangue'
+Obtenez le même résultat en une ligne, sans boucle
+
+5. Ignorer avec continue
+Avec le tableau [3, -1, 7, -4, 0, 5], affichez uniquement les nombres strictement positifs et calculez leur somme (vous devez obtenir 15). Utilisez continue pour passer les autres.
+
+6. forEach, map, filter
+Avec le tableau [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+Avec forEach, affichez chaque nombre sous la forme 'indice 0: 1'
+Avec map, créez un tableau contenant le carré de chaque nombre
+Avec filter, créez un tableau contenant uniquement les nombres pairs
+En enchaînant filter et map, créez un tableau contenant le carré des nombres pairs
+Affichez le tableau de départ: a-t-il été modifié ?
+
+7. Extraire et assembler
+Avec const week = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];:
+Avec slice, créez un tableau weekend contenant les deux derniers jours, et un tableau workdays contenant les cinq premiers
+Avec la déstructuration, récupérez le premier et le deuxième jour dans deux variables, et le reste dans une troisième
+Affichez les jours ouvrables sous la forme 'lundi - mardi - mercredi - jeudi - vendredi'
+Avec splice, retirez 'mercredi' de workdays (sans écrire son indice à la main) et affichez l'élément retiré
+
+8. Tri et références
+Avant d'exécuter, notez ce qu'affiche chaque ligne:
+
+const scores = [10, 1, 25, 2];
+const sorted = scores.sort();
+
+console.log(sorted);
+console.log(scores);
+console.log(sorted === scores);
+
+const c = [1, 2, 3];
+const d = c;
+d.push(4);
+
+console.log(c);
+console.log([1, 2] === [1, 2]);
+
+Expliquez le résultat du tri, et pourquoi scores a changé
+Déclarez const points = [10, 1, 25, 2];. Créez un tableau sortedPoints contenant ces valeurs triées numériquement, sans modifier points. Vérifiez que points n'a pas changé.
+Créez une fonction addElement(list, element) qui ajoute un élément au tableau reçu avec push. Appelez-la sur un tableau, puis affichez le tableau: que constatez-vous ? Pourquoi ?
+Écrivez une fonction withElement(list, element) qui retourne un nouveau tableau avec l'élément ajouté, sans modifier l'original
+
+9. Répertoire
+Créez un tableau contacts contenant au moins trois objets { name, phone }.
+Écrivez une fonction findContact(contacts, name) qui parcourt le tableau avec for...of et retourne le contact trouvé, ou null s'il n'existe pas
+Écrivez une seconde version, findContactWithFind, en utilisant find
+Affichez le téléphone d'un contact existant, puis tentez d'afficher celui d'un contact inexistant: affichez 'Contact introuvable' dans ce cas (voir Opérateurs)
+
+10. Notes d'un étudiant
+Créez un objet student avec:
+une propriété name
+une propriété grades: un tableau de notes sur 20
+une méthode getAverage() qui retourne la moyenne des notes (0 si le tableau est vide)
+une méthode isPassing() qui retourne true si la moyenne est supérieure ou égale à 10
+Testez avec les notes [12, 8, 15, 9], puis ajoutez une note de 2 et testez à nouveau.
+
+11. Panier
+Créez un objet cart avec:
+une propriété items: un tableau vide, qui contiendra des objets { name, price, quantity }
+une méthode addItem(name, price, quantity) qui ajoute un article au panier
+une méthode removeItem(name) qui retire l'article portant ce nom, s'il existe
+une méthode getTotal() qui retourne le prix total du panier (prix x quantité pour chaque article)
+Testez: ajoutez trois articles, affichez le total, retirez-en un, affichez à nouveau le total. Que se passe-t-il si on retire un article absent ?
+
+12. Bibliothèque
+Créez un objet library avec:
+une propriété books: un tableau d'objets { title, author, year }
+une méthode addBook(title, author, year)
+une méthode findBook(title) qui retourne le livre portant ce titre (avec find)
+une méthode getBooksByAuthor(author) qui retourne les livres de cet auteur (avec filter)
+une méthode getTitles() qui retourne la liste des titres (avec map)
+Testez avec au moins quatre livres, dont deux du même auteur. Affichez ensuite les titres triés par année de publication, sans modifier books.
+
+13. Bonus: reduce, some, every
+Pour aller plus loin.
+Écrivez une fonction getAverageWithReduce(grades) qui calcule la moyenne avec reduce, et comparez son résultat avec student.getAverage() de l'exercice 10
+Avec every, vérifiez que toutes les notes de student sont comprises entre 0 et 20
+Avec some, vérifiez si le panier de l'exercice 11 contient un article à plus de 50 €
