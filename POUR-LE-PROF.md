@@ -543,3 +543,7 @@ console.log('Somme des positifs :', positiveSum);
 Remarque : l'IA a vu que les exercices 3 et 4 de ce fichier contiennent chacun une erreur. Elle ne les a pas corrigés : ils seront vérifiés quand je le demanderai.
 
 **Énoncé (16/11/2026) :** le fichier `js-Tableaux/main.js` ne contenait que mon code des exercices 1 à 5, sans consignes. J'ai collé l'énoncé complet dans le chat. L'IA l'a enregistré tel quel dans `js-Tableaux/enonce.txt` et a ajouté les consignes des exercices 6 à 13 en commentaires à la fin de `main.js` (sans solutions). Avec l'énoncé, le cas du `0` dans l'exercice 5 devient une vraie erreur (« strictement positifs »).
+
+| Question | Ma réponse | Résultat |
+|---|---|---|
+| Comment faire pour que `continue` saute aussi le `0` ? | « value < 0 donc let positiveSum=1 » | ❌ `positiveSum` n'est pas le problème : c'est la boîte qui accumule la somme, elle doit commencer à 0. Avec 1, la somme deviendrait 16, et le `0` serait toujours affiché. Ce qui décide si un nombre est sauté, c'est la **condition** du `if` |
