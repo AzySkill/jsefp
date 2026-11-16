@@ -112,18 +112,27 @@ console.log('Somme des positifs :', positiveSum);
 // -----------------------------------------------------
 // 6. forEach, map, filter
 // -----------------------------------------------------
-console.log('--- 6. forEach, map, filter ---');
+
 // Avec le tableau [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] :
 // a) Avec forEach, affiche chaque nombre sous la forme 'indice 0: 1'.
 
 
+ 
+
 // b) Avec map, crée un tableau contenant le carré de chaque nombre.
 
 
+ // l'original n'a pas changé
+
 // c) Avec filter, crée un tableau contenant uniquement les nombres pairs.
+
+// La rue a disparu : la copie est superficielle, donc address est remplacé
+// en entier par { city: 'Liège' } au lieu d'être fusionné.
 
 
 // d) En enchaînant filter et map, crée un tableau contenant le carré des nombres pairs.
+// 6.4
+     // inchangé
 
 
 // e) Affiche le tableau de départ : a-t-il été modifié ?

@@ -96,7 +96,14 @@ for (const prop in book) {
 
 // ----- 6. Référence et copie -----
 // a) AVANT d'exécuter, note ce qu'affiche chaque ligne :
-//
+//const a = { x: 1 };
+const b = { x: 1 };
+const c = a;
+ 
+c.x = 5;
+console.log(a === b); // false : deux objets différents, même si le contenu est pareil
+console.log(a === c); // true : c pointe vers le même objet que a
+console.log(a.x);     // 5 : modifier c modifie a
 //    const a = { x: 1 };
 //    const b = { x: 1 };
 //    const c = a;
@@ -110,15 +117,31 @@ for (const prop in book) {
 
 // b) Crée une fonction updateUser(user, changes) qui retourne un NOUVEL utilisateur
 //    mis à jour, sans modifier l'original. Vérifie que l'original n'a pas changé.
+function updateUser(user, changes) {
+  return Object.assign(user, changes);
+}
+const original = createUser('Charlie', 25, 'charlie@mail.com');
+const updated = updateUser(original, { age: 26 });
+console.log(updated);
+console.log(original); // l'original n'a pas changé
+ 
 
 
 // c) Appelle updateUser(user, { address: { city: 'Liège' } }) avec le user de l'exercice 4.
-//    Qu'est devenue la rue ? Pourquoi ?
-// Ma réponse :
+const moved = updateUser(user, { address: { city: 'Liège' } });
+console.log(moved.address);
+
+//    Qu'est devenue la rue ? Pourquoi ?// La rue a disparu : la copie est superficielle, donc address est remplacé
+//    
+// Ma réponse :// en entier par { city: 'Liège' } au lieu d'être fusionné
 
 
 // d) Crée une copie profonde de user, modifie la ville de la copie,
 //    et vérifie que l'original n'a pas changé.
+const deepCopy = structuredClone(user);
+deepCopy.address.city = 'Namur';
+console.log(deepCopy.address.city); // Namur
+console.log(user.address.city);     // inchangé
 
 
 

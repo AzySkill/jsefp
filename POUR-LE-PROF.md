@@ -567,3 +567,61 @@ Console : `3`, `7`, `5`, puis `Somme des positifs : 15`.
 |---|---|---|---|
 | 5 | ✅ Résultat juste | Le `0` n'est plus affiché, la somme vaut 15 | ✅ |
 | 5 | ⚠️ Condition pas exacte | `value < 1` marche seulement parce que le tableau ne contient que des entiers. « Strictement positif » veut dire « plus grand que 0 » : la condition exacte doit parler de 0 (« plus petit ou égal à 0 ») | ⬜ |
+
+---
+
+# Retour aux exercices sur les objets
+
+### Tentative 1 — objets, exercice 6 « Référence et copie » (16/11/2026, 12 h 24)
+
+Mon code, tel quel (`js-objets/main.js`) :
+
+```js
+// a) AVANT d'exécuter, note ce qu'affiche chaque ligne :
+//const a = { x: 1 };
+const b = { x: 1 };
+const c = a;
+
+c.x = 5;
+console.log(a === b); // false : deux objets différents, même si le contenu est pareil
+console.log(a === c); // true : c pointe vers le même objet que a
+console.log(a.x);     // 5 : modifier c modifie a
+
+// b)
+function updateUser(user, changes) {
+  return Object.assign(user, changes);
+}
+const original = createUser('Charlie', 25, 'charlie@mail.com');
+const updated = updateUser(original, { age: 26 });
+console.log(updated);
+console.log(original); // l'original n'a pas changé
+
+// c)
+const moved = updateUser(user, { address: { city: 'Liège' } });
+console.log(moved.address);
+//    Qu'est devenue la rue ? Pourquoi ?// La rue a disparu : la copie est superficielle, donc address est remplacé
+// Ma réponse :// en entier par { city: 'Liège' } au lieu d'être fusionné
+
+// d)
+const deepCopy = structuredClone(user);
+deepCopy.address.city = 'Namur';
+console.log(deepCopy.address.city); // Namur
+console.log(user.address.city);     // inchangé
+```
+
+L'IA a exécuté le fichier : **rien de l'exercice 5 ni de l'exercice 6 ne s'affiche**, car la ligne du 4 c (`console.log(user.contact.email);`) n'est toujours pas en commentaire. L'erreur arrête tout le fichier à cet endroit.
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 4 c | ❌ Ligne toujours active | L'erreur `TypeError` arrête le fichier : les exercices 5 et 6 ne se sont jamais exécutés. Je n'ai donc pas pu voir leurs résultats | ⬜ |
+| 6 a | ✅ Prédictions justes | `false`, `true`, `5` | — |
+| 6 a | ❌ Première ligne en commentaire | `//const a = { x: 1 };` : le `//` désactive la ligne, donc `a` n'existe pas. Dès que le 4 c sera corrigé, `const c = a;` provoquera une erreur `ReferenceError: a is not defined` | ⬜ |
+| 6 a | ❓ À vérifier | « pointe vers le même objet » : vocabulaire pas encore vu, l'IA me demande de l'expliquer avec mes mots | ⬜ |
+| 6 b | ❌ L'original EST modifié | `Object.assign(user, changes)` copie les changements **dans** son premier argument, donc dans l'original lui-même. `updated` et `original` sont le même objet, et les deux ont `age: 26`. Mon commentaire « l'original n'a pas changé » est faux : je ne l'ai pas vérifié, puisque le fichier s'arrêtait avant | ⬜ |
+| 6 c | ⚠️ Explication à moitié juste | ✅ « address est remplacé en entier par { city: 'Liège' } au lieu d'être fusionné » est juste. ❌ « la copie est superficielle » : avec mon `updateUser`, il n'y a aucune copie (voir 6 b). Ma réponse est aussi mélangée avec les lignes de la consigne | ⬜ |
+| 6 d | ✅ Code juste | `structuredClone` fait une copie complète, y compris de `address` | — |
+| 6 d | ❓ À vérifier | `structuredClone`, `Object.assign` et « copie superficielle » n'ont pas été vus avec l'IA : elle me demande de les expliquer avec mes mots | ⬜ |
+
+### Remarque — fichier des tableaux, exercice 6
+
+Dans `js-Tableaux/main.js`, sous les consignes de l'exercice 6 (tableaux), il y a des morceaux de commentaires qui viennent de l'exercice 6 **des objets** (« l'original n'a pas changé », « La rue a disparu… », « 6.4 », « inchangé »). La ligne `console.log('--- 6. forEach, map, filter ---');` a aussi été supprimée. Il n'y a pas encore de code pour l'exercice 6 des tableaux.
