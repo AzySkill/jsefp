@@ -548,3 +548,22 @@ Remarque : l'IA a vu que les exercices 3 et 4 de ce fichier contiennent chacun u
 |---|---|---|
 | Comment faire pour que `continue` saute aussi le `0` ? | « value < 0 donc let positiveSum=1 » | ❌ `positiveSum` n'est pas le problème : c'est la boîte qui accumule la somme, elle doit commencer à 0. Avec 1, la somme deviendrait 16, et le `0` serait toujours affiché. Ce qui décide si un nombre est sauté, c'est la **condition** du `if` |
 | Et avec `if (value < 1)` ? | « donc le if (value <1 ) ? » | ⚠️ Ça marche pour ce tableau (le `0` est sauté, somme 15), mais seulement parce qu'il ne contient que des nombres entiers. Avec un nombre à virgule comme `0.5` (strictement positif), il serait sauté à tort. L'IA me demande de trouver la condition qui dit exactement « plus petit ou égal à 0 » |
+
+### Tentative 2 — exercice 5 (16/11/2026, 11 h 57)
+
+```js
+for (const value of values) {
+  if (value < 1) {
+    continue;
+  }
+  console.log(value);
+  positiveSum += value;
+}
+```
+
+Console : `3`, `7`, `5`, puis `Somme des positifs : 15`.
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 5 | ✅ Résultat juste | Le `0` n'est plus affiché, la somme vaut 15 | ✅ |
+| 5 | ⚠️ Condition pas exacte | `value < 1` marche seulement parce que le tableau ne contient que des entiers. « Strictement positif » veut dire « plus grand que 0 » : la condition exacte doit parler de 0 (« plus petit ou égal à 0 ») | ⬜ |

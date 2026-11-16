@@ -100,7 +100,7 @@ const values = [3, -1, 7, -4, 0, 5];
 let positiveSum = 0;
  
 for (const value of values) {
-  if (value < 0) {
+  if (value < 1) {
     continue;
   }
   console.log(value);
