@@ -655,3 +655,23 @@ L'IA a exécuté le fichier : `SyntaxError: Unexpected end of input` à la ligne
 | 6 a | ❓ À vérifier | Les fonctions fléchées `() => { }` et `forEach` n'ont pas été vues avec l'IA : elle me demande d'expliquer avec mes mots | ⬜ |
 
 Remarque : dans `js-objets/main.js`, mon code de l'exercice 6 d (`structuredClone`) a été supprimé.
+
+### Tentative 2 — tableaux, exercice 6 a (16/11/2026, 12 h 43)
+
+```js
+run('6. forEach, map, filter', () => {
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; }) ;
+
+  numbers.forEach((index, value) => {
+    console.log(`indice ${index}: ${value}`);
+  });
+```
+
+Console : les exercices 1 à 5 s'affichent de nouveau ✅, puis `ReferenceError: run is not defined` à la ligne 118.
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 6 a | ✅ Bloc fermé | La `SyntaxError` a disparu : le fichier se lance de nouveau | ✅ |
+| 6 a | ❌ `run` n'existe pas | C'est maintenant l'erreur affichée : `ReferenceError: run is not defined` | ⬜ |
+| 6 a | ❌ Fermé au mauvais endroit | Le `})` est juste après le tableau : le tableau `[1…10]` n'existe que dans ce bloc. Le `forEach` en dessous utiliserait donc le `numbers` de l'exercice 1 (`[0, 2, 3, …, 9]`), pas le bon tableau | ⬜ |
+| 6 a | ❌ Paramètres toujours inversés | `(index, value)` : `forEach` donne d'abord l'élément, puis l'indice | ⬜ |
