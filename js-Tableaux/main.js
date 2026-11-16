@@ -116,9 +116,9 @@ console.log('Somme des positifs :', positiveSum);
 // Avec le tableau [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] :
 // a) Avec forEach, affiche chaque nombre sous la forme 'indice 0: 1'.
 run('6. forEach, map, filter', () => {
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; }) ;a
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; }) ;
 
-  numbers.forEach((index, value) => {
+  numbers.forEach((value, index) => {
     console.log(`indice ${index}: ${value}`);
   });
 // b) Avec map, crée un tableau contenant le carré de chaque nombre.

@@ -675,3 +675,20 @@ Console : les exercices 1 à 5 s'affichent de nouveau ✅, puis `ReferenceError:
 | 6 a | ❌ `run` n'existe pas | C'est maintenant l'erreur affichée : `ReferenceError: run is not defined` | ⬜ |
 | 6 a | ❌ Fermé au mauvais endroit | Le `})` est juste après le tableau : le tableau `[1…10]` n'existe que dans ce bloc. Le `forEach` en dessous utiliserait donc le `numbers` de l'exercice 1 (`[0, 2, 3, …, 9]`), pas le bon tableau | ⬜ |
 | 6 a | ❌ Paramètres toujours inversés | `(index, value)` : `forEach` donne d'abord l'élément, puis l'indice | ⬜ |
+
+### Tentative 3 — tableaux, exercice 6 a (16/11/2026, 12 h 46)
+
+```js
+run('6. forEach, map, filter', () => {
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; }) ;
+
+  numbers.forEach((value, index) => {
+    console.log(`indice ${index}: ${value}`);
+  });
+```
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 6 a | ✅ Paramètres remis dans le bon ordre | `(value, index)` : d'abord l'élément, puis l'indice | ✅ |
+| 6 a | ❌ `run` toujours là | Toujours `ReferenceError: run is not defined` ligne 118 : le fichier s'arrête avant le `forEach` | ⬜ |
+| 6 a | ❌ `})` toujours juste après le tableau | Le `forEach` utiliserait le `numbers` de l'exercice 1 | ⬜ |
