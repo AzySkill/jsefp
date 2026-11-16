@@ -710,3 +710,11 @@ Console : `indice 0: 1` … `indice 9: 10`, et le fichier va jusqu'au bout sans 
 | 6 a | ✅ Juste | `run(...)` et `})` supprimés, tableau renommé `numbers6`, paramètres dans le bon ordre | ✅ |
 | 6 a | ⚠️ Détail | Les lignes sont décalées de 2 espaces vers la droite (reste de l'ancien bloc `run`) : ça marche, mais ce n'est pas aligné avec le reste | ⬜ |
 | 6 a | ❓ Toujours à expliquer | Que fait `forEach` ? Que sont les fonctions fléchées `() => { }` ? | ⬜ |
+
+| Question | Ma réponse | Résultat |
+|---|---|---|
+| Que fait `forEach` ? | « foreach ça veut dire pour tout mais je sais pas ce qu'il fait » | ⚠️ Bonne traduction (« pour chaque »), mais je ne sais pas encore ce qu'il fait |
+| À quoi sert `value` ? | « value est la valeur du chiffre » | ✅ |
+| À quoi sert `index` ? | « jsp » | ❌ Je ne savais pas |
+
+L'IA m'a expliqué `forEach` et l'indice avec un autre tableau (`colors`), puis m'a posé une question de vérification.
