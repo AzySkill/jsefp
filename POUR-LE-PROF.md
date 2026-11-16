@@ -692,3 +692,21 @@ run('6. forEach, map, filter', () => {
 | 6 a | ✅ Paramètres remis dans le bon ordre | `(value, index)` : d'abord l'élément, puis l'indice | ✅ |
 | 6 a | ❌ `run` toujours là | Toujours `ReferenceError: run is not defined` ligne 118 : le fichier s'arrête avant le `forEach` | ⬜ |
 | 6 a | ❌ `})` toujours juste après le tableau | Le `forEach` utiliserait le `numbers` de l'exercice 1 | ⬜ |
+
+### Tentative 4 — tableaux, exercice 6 a (16/11/2026, 12 h 52)
+
+```js
+  const numbers6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  numbers6.forEach((value, index) => {
+    console.log(`indice ${index}: ${value}`);
+  });
+```
+
+Console : `indice 0: 1` … `indice 9: 10`, et le fichier va jusqu'au bout sans erreur.
+
+| Exercice | Résultat | Explication | Corrigé par moi ? |
+|---|---|---|---|
+| 6 a | ✅ Juste | `run(...)` et `})` supprimés, tableau renommé `numbers6`, paramètres dans le bon ordre | ✅ |
+| 6 a | ⚠️ Détail | Les lignes sont décalées de 2 espaces vers la droite (reste de l'ancien bloc `run`) : ça marche, mais ce n'est pas aligné avec le reste | ⬜ |
+| 6 a | ❓ Toujours à expliquer | Que fait `forEach` ? Que sont les fonctions fléchées `() => { }` ? | ⬜ |
